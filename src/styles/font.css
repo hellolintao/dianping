@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot') format('embedded-opentype'),
+         url('../fonts/icomoon.woff') format('woff'),
+         url('../fonts/icomoon.ttf') format('truetype'),
+         url('../fonts/icomoon.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"],[class*=" icon-"] {
+	font-family: 'icomoon' !important;
+	speak:none;
+	font-style: normal;
+	font-weight: normal;
+	// font-variant:small-caps; 把段落设置为小型大写字母字体
+	font-variant: normal;
+	// 大小写转换
+	font-transform:none;
+	lint-height:1;
+
+	// 针对不同的引擎优化字体
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing:greyscale;
+}
+
+// 搜索icon
+.icon-search:before {
+  content: "\f002";
+}
+// 星星icon
+.icon-star:before {
+  content: "\f005";
+}
+
+.icon-star-o:before {
+  content: "\f006";
+}
+// 用户icon
+.icon-user:before {
+  content: "\f007";
+}
+// 图片icon
+.icon-image:before {
+  content: "\f03e";
+}
+// 照相icon
+.icon-photo:before {
+  content: "\f03e";
+}
+.icon-picture-o:before {
+  content: "\f03e";
+}
+.icon-map-marker:before {
+  content: "\f041";
+}
+.icon-share-square-o:before {
+  content: "\f045";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-key:before {
+  content: "\f084";
+}
+.icon-phone:before {
+  content: "\f095";
+}
+// 向右的箭头
+.icon-angle-right:before {
+  content: "\f105";
+}
+// 想下的箭头
+.icon-angle-down:before {
+  content: "\f107";
+}
+.icon-tablet:before {
+  content: "\f10a";
+}
