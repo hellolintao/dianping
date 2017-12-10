@@ -20,7 +20,7 @@ class Home extends React.Component {
                 <HomeHeader cityName={this.props.userinfo.cityName}/>
                 <Category/>
                 <div style={{height:'15px'}}> {/*分割线*/}</div>
-                
+                <Ad/>
                 <List cityName={this.props.userinfo.cityName}/>
             </div>
         )

@@ -14,6 +14,7 @@
     "lint": "eslint ./src",
     "copy": "copyfiles -f ./src/index.html ./src/favicon.ico ./dist",
     "clean": "rimraf dist/*",
+    "mock": "node --harmony ./mock/server.js",
     "release:major": "npm version major && npm publish && git push --follow-tags",
     "release:minor": "npm version minor && npm publish && git push --follow-tags",
     "release:patch": "npm version patch && npm publish && git push --follow-tags"
@@ -49,6 +50,8 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.5",
     "karma-webpack": "^1.7.0",
+    "koa": "^1.2.2",
+    "koa-router": "^5.4.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "minimist": "^1.2.0",
@@ -69,6 +72,7 @@
   },
   "dependencies": {
     "core-js": "^2.0.0",
+    "es6-promise": "^4.1.1",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
     "react-addons-pure-render-mixin": "^15.6.2",
@@ -77,6 +81,7 @@
     "react-router": "^2.8.1",
     "react-swipe": "^5.1.0",
     "redux": "^3.7.2",
-    "swipe-js-iso": "^2.0.4"
+    "swipe-js-iso": "^2.0.4",
+    "whatwg-fetch": "^2.0.3"
   }
 }
