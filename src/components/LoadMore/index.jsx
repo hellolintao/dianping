@@ -10,6 +10,7 @@ class LoadMore extends React.Component {
 	}
 
 	render() {
+		console.log(this.props.isLoadingMore);
 		return (
 			<div className="load-more" ref="wrapper">
 				{
@@ -26,16 +27,29 @@ class LoadMore extends React.Component {
 		this.props.loadMoreFn();
 	}
 
-	// 这个地方的代码难以理解，先不做了
-	/*componentDidMount() {
-		// 使用滚动的时候加载更多
+	componentDidMount() {
+		// 使用滚动是自动加载更多
 		const loadMoreFn = this.props.loadMoreFn;
 		const wrapper = this.refs.wrapper;
 		let timeoutId;
 		function callback() {
-			const top = wrapper.getBoundingClient
+			const top = wrapper.getBoundingClientRect().top;
+			const windowHeight = window.screen.height;
+			if(top && top < windowHeight) {
+				// 证明wrapper已经被滚动到暴露在页面可视范围之内了
+				loadMoreFn();
+			}
 		}
-	}*/
+		window.addEventListener('scroll',function() {
+			if(this.props.isLoadingMore) {
+				return;
+			}
+			if(timeoutId) {
+				clearTimeout(timeoutId);
+			}
+			timeoutId = setTimeout(callback,50);
+		}.bind(this),false);
+	}
 }
 
 export default LoadMore;

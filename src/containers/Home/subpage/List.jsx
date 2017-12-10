@@ -16,33 +16,38 @@ class List extends React.Component {
             hasMore:false,
             isLoadingMore:false,
             page:0
-        }
+        };
     }
     render() {
-        console.log("render第"+this.state.data.length);
+        console.log(this.props);
         return (
             <div>
                 <h2 className="home-list-title">猜你喜欢</h2>
                 {
                     this.state.data.length
                     ? <ListComponent data={this.state.data}/>
-                    : <div>???</div>
+                    : <div></div>
                 }
                 {
                     this.state.hasMore
-                    ? <LoadMore isLoadingMore={this.state.isLoadingMore}/>
-                    : ''
+                    ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreFn={this.loadMoreData.bind(this)}/>
+                    : <p className="no-more">没有更多了</p>
                 }
             </div>
         )
     }
     // 装载完之后被调用，render函数之后调用，
-    // 或缺首页的数据，城市名字，根据城市取到的结果，
+    // 获取首页的数据，城市名字，根据城市取到的结果，
     componentDidMount() {
+        console.log(this.props);
+        this.loadFirstPageData();
+    }
+    // 获取第一个组数据
+    loadFirstPageData() {
         const cityName = this.props.cityName;
         const result = getListData(cityName,0);
-        console.log("获取到的猜你喜欢数据：");
-        console.log(result);
+        console.log("cityName"+cityName);
+        console.log(this.props);
         this.resultHandle(result);
     }
 
@@ -57,7 +62,7 @@ class List extends React.Component {
         const page = this.state.page;
         const result = getListData(cityName,page);
         this.resultHandle(result);
-
+        console.log("cityName"+cityName);
         // 增加page
         this.setState({
             page: page + 1,
@@ -79,7 +84,7 @@ class List extends React.Component {
             this.setState({               
                 hasMore: hasMore,
                 // 这里把获取到的最新数据拼接到原始数据之后
-                data: newdata
+                data: this.state.data.concat(newdata)
             });
             console.log("!!!!!!!!!!");
             console.log(this.state.data);
