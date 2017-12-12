@@ -6,7 +6,6 @@ import * as actionTypes from '../constants/userinfo';
 const initialState = {};
 
 export default function userinfo (state = initialState,action) {
-	console.log("userinfo.js");
 	// 按照不同的条件返回不同的值
 	switch(action.type){
 		case actionTypes.USERINFO_UPDATE:
