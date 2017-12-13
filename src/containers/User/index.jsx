@@ -1,20 +1,30 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import { bindActionCreators } from 'redux';
+import { hashHistory } from 'react-router';
+import { connect } from 'react-redux'
+
+import * as userInfoActionsFromOtherFile from '../../actions/userinfo';
+
+import Header from '../../components/Header';
+import Login from '../../components/Login';
 
 class User extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+        this.state = {
+            checking: true
+        }
     }
     render() {
         return (
             <div>
-                <h1>User</h1>
+                <Header title="用户中心"/>
+                <p>这里是用户中心</p> 
             </div>
         )
     }
 }
 
-// 使用 require.ensure 异步加载，还不支持 ES6 的 export 
-// export default User
-module.exports = User
+export default User;
