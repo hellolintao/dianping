@@ -45,6 +45,7 @@ class List extends React.Component {
     // 获取第一个组数据
     loadFirstPageData() {
         const cityName = this.props.cityName;
+        console.log("使用这个cityname获取列表"+cityName);
         const result = getListData(cityName,0);
         console.log("cityName"+cityName);
         console.log(this.props);

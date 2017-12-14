@@ -15,6 +15,7 @@ class Home extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
+        console.log("传递props中的cityname"+ this.props.userinfo.cityName);
         return (
             <div>
                 <HomeHeader cityName={this.props.userinfo.cityName}/>
