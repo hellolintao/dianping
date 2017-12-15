@@ -1,6 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import { getListData } from '../../../fetch/home/home'; 
+import { getListData } from '../../../fetch/home/home';
 
 import ListComponent from '../../../components/List';
 import LoadMore from '../../../components/LoadMore';
@@ -19,7 +19,6 @@ class List extends React.Component {
         };
     }
     render() {
-        console.log(this.props);
         return (
             <div>
                 <h2 className="home-list-title">猜你喜欢</h2>
@@ -39,16 +38,12 @@ class List extends React.Component {
     // 装载完之后被调用，render函数之后调用，
     // 获取首页的数据，城市名字，根据城市取到的结果，
     componentDidMount() {
-        console.log(this.props);
         this.loadFirstPageData();
     }
     // 获取第一个组数据
     loadFirstPageData() {
         const cityName = this.props.cityName;
-        console.log("使用这个cityname获取列表"+cityName);
         const result = getListData(cityName,0);
-        console.log("cityName"+cityName);
-        console.log(this.props);
         this.resultHandle(result);
     }
 
@@ -63,7 +58,6 @@ class List extends React.Component {
         const page = this.state.page;
         const result = getListData(cityName,page);
         this.resultHandle(result);
-        console.log("cityName"+cityName);
         // 增加page
         this.setState({
             page: page + 1,
@@ -78,17 +72,13 @@ class List extends React.Component {
         result.then(res => {
             return res.json();
         }).then(json => {
-            console.log(json);
             const hasMore = json.hasMore;
             const newdata = json.data;
-
-            this.setState({               
+            this.setState({           
                 hasMore: hasMore,
                 // 这里把获取到的最新数据拼接到原始数据之后
                 data: this.state.data.concat(newdata)
             });
-            console.log("!!!!!!!!!!");
-            console.log(this.state.data);
         }).catch(ex => {
             console.log('首页猜你喜欢获取数据错误',ex.message);
         })

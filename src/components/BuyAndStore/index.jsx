@@ -32,7 +32,6 @@ class BuyAndStore extends React.Component {
     }
 
     storeClickHandle() {
-        console.log("收藏被点击了！");
         const storeHandle = this.props.storeHandle()
     }
 }

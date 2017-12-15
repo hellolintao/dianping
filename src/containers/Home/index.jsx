@@ -1,7 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import HomeHeader from '../../components/HomeHeader';
@@ -15,7 +14,6 @@ class Home extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
-        console.log("传递props中的cityname"+ this.props.userinfo.cityName);
         return (
             <div>
                 <HomeHeader cityName={this.props.userinfo.cityName}/>

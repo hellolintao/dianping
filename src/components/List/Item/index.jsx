@@ -11,7 +11,6 @@ class ListItem extends React.Component {
 	}
 	render() {
 		const data = this.props.data;
-		console.log(data);
 		return (
 			<div className="list-item clear-fix">
 				<Link to={'/detail/' + data.id}>

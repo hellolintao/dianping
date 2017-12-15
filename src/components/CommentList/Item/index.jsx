@@ -14,7 +14,6 @@ class Item extends React.Component {
 
         // 获取数据
         const item = this.props.data;
-        console.log(item.star);
         return (
             <div className="comment-item">
                 <h3>

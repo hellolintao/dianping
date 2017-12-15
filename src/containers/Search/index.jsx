@@ -11,7 +11,6 @@ class Search extends React.Component {
     }
     render() {
         const params = this.props.params;
-        console.log(this.props.params);
         return (
             <div>
                 <SearchHeader keyword={params.keyword}/>
@@ -22,8 +21,6 @@ class Search extends React.Component {
 
     componentDidMount() {
         const params = this.props.params;
-        console.log('category param:' + params.category);
-        console.log('key param:' + params.keyword);
     }
 }
 

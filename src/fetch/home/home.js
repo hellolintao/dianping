@@ -9,4 +9,4 @@ export function getListData(city, page) {
 	const city1 = city ? city : '北京';
 	const result = get('/api/homelist/' + encodeURIComponent(city1) + '/' + page);
 	return result;
-} 
+}

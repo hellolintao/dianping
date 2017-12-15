@@ -18,7 +18,6 @@ class Login extends React.Component {
         }
     }
     render() {
-        console.log("登录页面进来了");
         return (
             <div>
                 <Header title="登录"/>
@@ -54,7 +53,6 @@ class Login extends React.Component {
     loginHandle(username) {
         // 保存用户名
         const actions = this.props.userinfoAction;
-        console.log(this.props);
         let userinfo = this.props.userinfo;
         userinfo.username = username;
         actions.update(userinfo);
@@ -70,7 +68,6 @@ class Login extends React.Component {
         }
     }
     goUserPage() {
-        console.log("登录之后跳转到用户主页了！！");
         hashHistory.push('/User');
     }
 }

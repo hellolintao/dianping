@@ -16,7 +16,7 @@ class Login extends React.Component {
 			<div id="login-container">
 				<div className="input-container phone-container">
 					<i className="icon-tablet"></i>
-					<input 
+					<input
 						type="text"
 						placeholder="输入手机号"
 						onChange={this.changeHandle.bind(this)}
@@ -26,7 +26,7 @@ class Login extends React.Component {
 				<div className="input-container password-container">
 					<i className="icon-key"></i>
 					<button>发送验证码</button>
-					<input 
+					<input
 						type="text"
 						placeholder="输入验证码"
 					/>
@@ -36,7 +36,6 @@ class Login extends React.Component {
 		)
 	}
 	changeHandle(e) {
-		console.log(e.target.value);
 		this.setState({
 			username: e.target.value
 		})

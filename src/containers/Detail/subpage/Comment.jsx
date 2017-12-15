@@ -49,7 +49,6 @@ class Comment extends React.Component {
 		result.then(res => {
 			return res.json();
 		}).then(json => {
-			console.log(json);
 			const page = this.state.page;
 			this.setState({
 				page: page + 1
@@ -63,7 +62,7 @@ class Comment extends React.Component {
 				data:this.state.data.concat(data)
 			})
 		}).catch(ex => {
-			console.log("评价获取失败",ex.message);
+			console.log('评价获取失败',ex.message);
 		})
 	}
 	// 加载更多数据

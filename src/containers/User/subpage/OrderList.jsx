@@ -15,7 +15,6 @@ class OrderList extends React.Component {
 		}
 	}
 	render() {
-		console.log(this.state.data);
 		return (
 			<div className="order-list-container">
 				<h2>您的订单</h2>
@@ -41,19 +40,16 @@ class OrderList extends React.Component {
 		result.then(res => {
 			return res.json();
 		}).then(json => {
-			console.log(this.setState)
 			this.setState({
                 data: json
             })
-			console.log(this.state.data)
 		}).catch(ex => {
-			console.log(this.state);
-			console.error("用户主页订单列表获取数据失败", ex.message);
+			console.error('用户主页订单列表获取数据失败', ex.message);
 		})
 	}
 
-	submitComment(id, value, callback) {
-		const result = postComment(id,value);
+	submitComment(id, value, star, callback) {
+		const result = postComment(id, value, star);
 		result.then(res => {
 			return res.json()
 		}).then(json => {

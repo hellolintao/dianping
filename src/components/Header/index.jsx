@@ -25,7 +25,7 @@ class Header extends React.Component {
 			hashHistory.push(backRouter);
 		} else {
 			window.history.back();
-		} 
+		}
 		
 	}
 }

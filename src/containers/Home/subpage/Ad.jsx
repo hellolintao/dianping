@@ -13,8 +13,6 @@ class Ad extends React.Component {
 		}
 	}
 	render() {
-		console.log("收到数据的长度"+this.state.data.length);
-		console.log(this.state.data);
 		return (
 			<div>
 				{

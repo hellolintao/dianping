@@ -22,7 +22,6 @@ class SearchList extends React.Component {
 		this.state = initialState;
 	}
 	render() {
-		console.log(this.state.data);
 		return (
 			<div>
 				{
@@ -71,7 +70,7 @@ class SearchList extends React.Component {
    				data:this.state.data.concat(data)
    			});
    		}).catch(ex => {
-   			console.log("搜索页获取数据报错" + ex.message);
+   			console.log('搜索页获取数据报错' + ex.message);
    		})
    	}
 

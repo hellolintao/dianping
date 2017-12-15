@@ -1,10 +1,7 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import { bindActionCreators } from 'redux';
 import { hashHistory } from 'react-router';
 import { connect } from 'react-redux'
-
-import * as userInfoActionsFromOtherFile from '../../actions/userinfo';
 
 import Header from '../../components/Header';
 import UserInfo from '../../components/UserInfo';

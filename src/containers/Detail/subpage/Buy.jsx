@@ -21,7 +21,7 @@ class Buy extends React.Component {
     render() {
         return (
             <div>
-                <BuyAndStore isStore={this.state.isStore} buyHandle={this.buyHandle.bind(this)} storeHandle={this.storeHandle.bind(this)}/> 
+                <BuyAndStore isStore={this.state.isStore} buyHandle={this.buyHandle.bind(this)} storeHandle={this.storeHandle.bind(this)}/>
             </div>
         )
     }
@@ -66,14 +66,14 @@ class Buy extends React.Component {
         // 验证登录,没有登录的话则结束，跳转到登录页面
         const loginFlag = this.loginCheck();
         if(!loginFlag) {
-            return 
+            return
         }
 
         // 套转到用户主页???
         hashHistory.push('/User');
     }
 
-    // 收藏事件 
+    // 收藏事件
     storeHandle() {
         // 验证登录，未登录则return
         const loginflag = this.loginCheck();

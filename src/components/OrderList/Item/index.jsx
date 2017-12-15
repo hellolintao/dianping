@@ -1,6 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
+import Star from '../../Star';
+
 import './style.less';
 
 class OrderListComponent extends React.Component {
@@ -8,7 +10,8 @@ class OrderListComponent extends React.Component {
 		super(props, context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 		this.state = {
-			commentState: 2 // commentState 0-未评价 1-评价中 2-已评价
+			commentState: 2, // commentState 0-未评价 1-评价中 2-已评价
+			stars:0
 		}
 	}
 	render() {
@@ -22,7 +25,7 @@ class OrderListComponent extends React.Component {
 					{
 						this.state.commentState === 0
 						? <button className="btn" onClick={this.showComment.bind(this)}>评价</button>
-						: this.state.commentState ===1 
+						: this.state.commentState ===1
 							? ''
 							: <button className="btn unseleted-btn">已评价</button>
 					}
@@ -34,8 +37,11 @@ class OrderListComponent extends React.Component {
 				</div>
 				{
 					// 评价中显示输入框
-					this.state.commentState === 1 
+					this.state.commentState === 1
 					? <div className="comment-text-container">
+						<div className="comment-star-container">
+							<Star star={this.state.stars} clickCallback={this.starClickCallback.bind(this)}/>
+						</div>
 						<textarea className="comment-text" ref="commentText"></textarea>
 						<button className="btn" onClick={this.submitComment.bind(this)}>提交</button>
 						<button className="btn unseleted-btn" onClick={this.hideComment.bind(this)}>取消</button>
@@ -48,7 +54,6 @@ class OrderListComponent extends React.Component {
 
 	componentDidMount() {
 		// 将状态维护到state中
-		console.log(this.props.commentState);
 		this.setState({
 			commentState: this.props.data.commentState
 		})
@@ -66,22 +71,33 @@ class OrderListComponent extends React.Component {
 	}
 	// 利用传递的函数进行评价提交
 	submitComment(){
+		// 获取函数操作
 		const submitComment = this.props.submitComment;
-		console.log(submitComment);
+		// 获取id
 		const id = this.props.data.id;
+		// 获取start数量
+		const stars = this.state.stars;
+		const star = stars[id] || '0';
 		// 获取评价内容
 		const commentText = this.refs.commentText;
 		const value = commentText.value.trim();
 		if(!value) {
 			return
 		}
-		submitComment(id, value, this.commentOk.bind(this));
+		// 执行数据提交
+		submitComment(id, value, star,this.commentOk.bind(this));
 	}
 
 	// 已经评价传入回调函数，修改状态
 	commentOk() {
 		this.setState({
 			commentState: 2
+		})
+	}
+
+	starClickCallback(star) {
+		this.setState({
+			stars:star
 		})
 	}
 }

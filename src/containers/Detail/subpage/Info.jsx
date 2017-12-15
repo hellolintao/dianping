@@ -39,7 +39,7 @@ class Info extends React.Component {
 				info:json
 			})
 		}).catch(ex => {
-			console.log("详情页获取商户信息出错了！");
+			console.log('详情页获取商户信息出错了！',ex.message);
 		})
 	}
 }

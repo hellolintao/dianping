@@ -10,7 +10,6 @@ class LoadMore extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.isLoadingMore);
 		return (
 			<div className="load-more" ref="wrapper">
 				{

@@ -76,9 +76,9 @@ class Category extends React.Component {
 				</ReactSwipe>
 				<div className="index-container">
 					<ul>
-						<li className={this.state.index === 0 ? "selected" : ""}></li>
-						<li className={this.state.index === 1 ? "selected" : ""}></li>
-						<li className={this.state.index === 2 ? "selected" : ""}></li>
+						<li className={this.state.index === 0 ? 'selected' : ''}></li>
+						<li className={this.state.index === 1 ? 'selected' : ''}></li>
+						<li className={this.state.index === 2 ? 'selected' : ''}></li>
 					</ul>
 				</div>
 			</div>
