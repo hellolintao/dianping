@@ -1,14 +1,9 @@
-## markdown基本语法：
-	#~######六个级别的标题
-	*无序列表
-	1.有序列表
-	>引用
-	[baidu](http://www.baidu.com)插入链接
-	![Mou img](http://shbsdb.png)插入图片
-	**粗体**
-	*斜体*
-	`代码`
-	***分割线
+## How to use
+1. 首先安装依赖 npm install 
+2. 启动数据模拟 npm run mock
+3. 启动服务监听 npm run start
+4. 打开本地的9000端口
+
 ## 使用的技术
 * React
 * React-router
@@ -16,14 +11,7 @@
 * fetch
 * Mock
 
-## How to use
-1. 首先安装依赖 npm install 
-2. 启动数据模拟 npm run mock
-3. 启动服务监听 npm run start
-4. 打开本地的9000端口
-
 ## 开发文档
-
 ### 开发环境的搭建（使用Yeoman）：
 1. 安装yeoman npm install yeoman
 2. 使用yeoman生成项目 yo react-webpack
