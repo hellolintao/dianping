@@ -10,11 +10,11 @@
 	`代码`
 	***分割线
 ## 使用的技术
-	* React
-	* React-router
-	* Redux
-	* fetch
-	* Mock
+	*React
+	*React-router
+	*Redux
+	*fetch
+	*Mock
 
 ## How to use
 	1. 首先安装依赖 npm install 
