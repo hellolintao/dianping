@@ -10,6 +10,7 @@
 * Redux
 * fetch
 * Mock
+* Less
 
 ## 开发文档
 ### 开发环境的搭建（使用Yeoman）：
