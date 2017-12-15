@@ -1,4 +1,5 @@
 # Redux store文件
+# store生成器，根据reduces创建store，并且打开redux开发工具
 
 # About this folder
 This folder will hold all of your **flux** stores.
